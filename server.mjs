@@ -35,10 +35,10 @@ mongoose.connect(dbConfig.mongoURIsharpSystem).then(() => {
     console.error('Hiba történt az adatbázishoz való csatlakozás közben:', err);
 });
 
-const user = await User.findOne({ email: "albi@gmail.com" });
+/* const user = await User.findOne({ email: "albi@gmail.com" });
 app.get('/db', (req, res) => {
     res.send(user);
-});
+}); */
 
 app.use('/auth', authRoutes);
 app.use('/products', productsRoutes);
