@@ -1,0 +1,169 @@
+@use "../../scss/variable.scss";
+@use "../../scss/ancestor-class.scss";
+
+.navBackground {
+    width: 100%;
+    height: 5rem;
+    background-color: variable.$color-main-background-nav;
+    border-bottom: 2px solid variable.$color-font-secondary;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.noneDis {
+    display: none;
+}
+
+.navContainer {
+    padding: 0.3rem 1.8rem 0.3rem 0.5rem;
+    @extend %nav-icon;
+    @include variable.container-my;
+    height: 100%;
+    background-color: variable.$color-main-background-nav;
+    text-align: center;
+    @include variable.flexBox(row, nowrap, center, space-between, center);
+    gap: 0.5rem;
+
+    .navIconContainer {
+        @include variable.flexBox(row, nowrap, normal, normal, normal);
+        gap: 0.5rem;
+    }
+
+    .iconContainer {
+        @include variable.flexBox(column, nowrap, center, center, center);
+        font-size: variable.$size-r05;
+        font-weight: variable.$weights-9;
+        position: relative;
+
+        .sum {
+            @include variable.flexBox(column, nowrap, center, center, center);
+            width: 28px;
+            height: 28px;
+            border-radius: 5rem;
+            box-shadow: 0 0 20px 0 red;
+            background-color: red;
+            position: absolute;
+            top: -12px;
+            right: -10px;
+            color: white;
+        }
+    }
+
+    .navMenuContainer {
+        display: none;
+    }
+
+    .logoContainer {
+        height: 100%;
+        @include variable.flexBox(column, nowrap, center, center, center);
+        .logoLink {
+            height: 60%;
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+    .icon {
+        @extend %nav-icon;
+        &:hover {
+            cursor: pointer;
+            color: variable.$color-main-button-hover;
+        }
+    }
+
+    .loginIcon {
+        position: relative;
+    }
+
+    .dropdownContent {
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        height: 240px;
+        background-color: variable.$color-main-background-nav;
+        border-radius: 0.5rem;
+        @include variable.flexBox(column, nowrap, center, space-evenly, center);
+    }
+}
+
+@include variable.Small {
+    .navContainer {
+        padding: 0.3rem 2rem 0.3rem 1rem;
+        .iconContainer {
+            font-size: variable.$size-r05 + 0.2;
+        }
+        .icon {
+            font-size: variable.$size-r20;
+        }
+    }
+}
+@include variable.Medium {
+    .navContainer {
+        padding: 0.3rem 2.3rem 0.3rem 1.5rem;
+        .logoContainer {
+            .logoLink {
+                height: 100%;
+            }
+        }
+
+        .dropdownContent {
+            position: absolute;
+            top: 85px;
+            left: initial;
+            width: 250px;
+            height: 240px;
+            background-color: variable.$color-main-background-nav;
+            border-radius: 0.5rem;
+            @include variable.flexBox(column, nowrap, center, space-evenly, center);
+
+            .dropdownCategory {
+                padding-top: 0.75rem;
+                width: 100%;
+                border-top: 1px solid white;
+                cursor: pointer;
+
+                .exit {
+                    padding-left: 1rem;
+                }
+            }
+        }
+    }
+}
+@include variable.Large {
+    .navContainer {
+        padding: 0.3rem 2.5rem 0.3rem 2rem;
+        .nav-iconContainer {
+            gap: 1.2rem;
+        }
+    }
+}
+@include variable.Extra-large {
+    .navContainer {
+        .navMenuContainer {
+            height: 100%;
+            width: 50%;
+            @include variable.flexBox(row, nowrap, center, space-evenly, center);
+            .link {
+                white-space: nowrap;
+                font-size: variable.$size-r10;
+                font-weight: variable.$weights-9;
+            }
+        }
+    }
+
+    .navMenuBtnContainer {
+        display: none;
+    }
+}
+@include variable.XXL-large {
+    .navContainer {
+        .nav-iconContainer {
+            gap: 1.8rem;
+        }
+    }
+}
+@include variable.XXXL-large {
+}

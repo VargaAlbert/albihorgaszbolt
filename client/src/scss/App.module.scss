@@ -1,0 +1,15 @@
+@use "./reset.scss";
+@use "./variable.scss";
+
+.mainBackground {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    min-width: 350px;
+    background-color: variable.$color-main-background;
+}
+
+.mainContainer {
+    @include variable.container-my;
+    padding-top: 5rem;
+}

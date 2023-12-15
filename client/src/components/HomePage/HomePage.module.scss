@@ -1,0 +1,7 @@
+@use "../../scss/variable.scss";
+
+.mainContainer {
+    width: 100%;
+    max-width: 1650px;
+    background-color: variable.$color-main-background;
+}

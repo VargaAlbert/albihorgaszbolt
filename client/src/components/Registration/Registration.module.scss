@@ -1,0 +1,70 @@
+@use "../../scss/variable.scss";
+@use "../../scss/ancestor-class.scss";
+
+.mainContainer {
+    h2 {
+        text-align: center;
+        color: variable.$color-font-primary;
+    }
+
+    p {
+        text-align: center;
+        color: variable.$color-font-primary;
+    }
+}
+
+.container {
+    max-width: variable.$XXL-large;
+    width: 98%;
+    margin: auto;
+}
+
+.notEqualPass {
+    background-color: red;
+}
+
+.registration {
+    margin-top: 3rem;
+    input {
+        width: 100%;
+        height: 3rem;
+        margin: 1rem 0;
+        padding: 0 0 0 1rem;
+        border-radius: 0.5rem;
+        background-color: variable.$color-font-primary;
+        color: variable.$color-basic-black;
+    }
+
+    button {
+        @include ancestor-class.main-button;
+        margin: 2rem 0;
+        width: 100%;
+        height: 3rem;
+        border-radius: 0.5rem;
+        letter-spacing: 0.1rem;
+    }
+}
+
+@include variable.Small {
+}
+@include variable.Medium {
+    .registration {
+        input {
+            margin: 1rem 2%;
+            width: 46%;
+        }
+
+        button {
+            margin: 2rem 2%;
+            width: 96%;
+        }
+    }
+}
+@include variable.Large {
+}
+@include variable.Extra-large {
+}
+@include variable.XXL-large {
+}
+@include variable.XXXL-large {
+}

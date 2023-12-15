@@ -1,0 +1,126 @@
+@use "../../scss/variable.scss";
+@use "../../scss/ancestor-class.scss";
+
+.mainContainer {
+    width: 100%;
+    min-height: 100%;
+}
+
+.productContainer {
+    width: 100%;
+    height: 490px;
+    @include variable.flexBox(column, nowrap, center, space-around, center);
+    background-color: variable.$color-main-background-product;
+    color: variable.$color-font-primary;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 0.5rem 0.3rem;
+    transition: 0.2s;
+
+    &:hover {
+        transform: scale(1.05);
+        transition: 0.2s;
+    }
+
+    .link {
+        @include variable.flexBox(column, nowrap, center, space-around, center);
+    }
+
+    .imgCont {
+        display: block;
+        width: 85%;
+        max-height: 300px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 1rem;
+    }
+
+    h3 {
+        margin: 1rem 0.5rem 0.5rem;
+        font-size: variable.$size-r10;
+        font-weight: variable.$weights-9;
+        color: variable.$color-font-primary;
+    }
+
+    h4 {
+        font-weight: variable.$weights-6;
+        font-size: variable.$size-r10 + 0.2rem;
+        color: variable.$color-font-primary;
+        margin: 0rem 0.5rem 0.5rem;
+    }
+
+    .productId {
+        color: variable.$color-font-secondary;
+        border-top: 1px solid variable.$color-font-secondary;
+    }
+
+    .price {
+        font-size: variable.$size-r15;
+        font-weight: variable.$weights-9;
+    }
+
+    .itemByContainer {
+        height: 60px;
+        width: 90%;
+        @include variable.flexBox(row, nowrap, center, space-between, center);
+    }
+
+    .btnByIcon {
+        font-size: variable.$size-r20;
+        color: variable.$color-font-primary;
+    }
+
+    .btnHeartIcon {
+        font-size: variable.$size-r20;
+        color: variable.$color-font-primary;
+
+        &:hover {
+            color: variable.$color-main-button-hover;
+            font-size: variable.$size-r20 + 0.2rem;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+    }
+
+    .byBtn {
+        @include ancestor-class.main-button;
+        font-size: variable.$size-r10;
+        width: 65%;
+        padding: 0.8rem;
+    }
+}
+
+.productItemContainer {
+    width: 100%;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+@include variable.Small {
+    .productItemContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@include variable.Medium {
+    .productItemContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@include variable.Large {
+    .productItemContainer {
+        grid-gap: 3rem 3rem;
+    }
+}
+@include variable.Extra-large {
+}
+@include variable.XXL-large {
+    .productItemContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@include variable.XXXL-large {
+}

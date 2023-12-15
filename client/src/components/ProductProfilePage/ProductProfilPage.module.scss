@@ -1,0 +1,134 @@
+@use "../../scss/variable.scss";
+@use "../../scss/ancestor-class.scss";
+
+.mainContainer {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 0.7rem;
+    background-color: variable.$color-main-background;
+    color: variable.$color-font-primary;
+    @include variable.flexBox(column, nowrap, center, center, center);
+}
+
+.container {
+    @include variable.flexBox(column, nowrap, center, center, center);
+
+    .img {
+        width: 100%;
+    }
+
+    h2 {
+        width: 100%;
+        font-size: variable.$size-r20;
+        color: variable.$color-font-primary;
+    }
+
+    h3 {
+        width: 100%;
+        font-size: variable.$size-r15;
+        color: variable.$color-font-primary;
+        margin: 0.5rem 0.5rem 1rem;
+        padding: 0.5rem 0.5rem 1rem;
+        border-bottom: 2px solid variable.$color-font-secondary;
+    }
+
+    .priceContainer {
+        width: 100%;
+        text-align: start;
+        margin: 0.5rem 0.5rem 1rem;
+        padding: 0.5rem 1rem 1rem;
+        border-bottom: 2px solid variable.$color-font-secondary;
+
+        p {
+            font-size: variable.$size-r20;
+            color: variable.$color-font-primary;
+            font-weight: variable.$weights-7;
+        }
+    }
+}
+
+.textContainer {
+    width: 100%;
+    padding: 2rem 0.5rem;
+    text-align: center;
+
+    .btnContainer {
+        width: 100%;
+        @include variable.flexBox(row, nowrap, center, space-around, center);
+        gap: 1rem;
+        margin: 2rem 0rem;
+        height: 3rem;
+
+        .IncDecBtnContainer {
+            @include ancestor-class.INC-DEC-btn-container;
+        }
+
+        .byBtn {
+            @include ancestor-class.main-button;
+            width: 40%;
+            height: 100%;
+        }
+
+        .btnIoveIconContainer {
+            width: 55px;
+        }
+
+        .btnIoveIcon {
+            font-size: variable.$size-r25;
+
+            &:hover {
+                color: variable.$color-main-button-hover;
+                font-size: variable.$size-r25 + 0.3rem;
+                transition: 0.2s;
+                cursor: pointer;
+            }
+        }
+
+        .btnByIcon {
+            font-size: variable.$size-r20;
+            color: variable.$color-font-primary;
+        }
+    }
+}
+
+.productDescriptionContainer {
+    width: 100%;
+    margin: 2rem 0;
+
+    .productDescriptionHead {
+        margin: 1rem 0;
+        border-bottom: 2px solid variable.$color-font-secondary;
+    }
+
+    .productDescriptionBody {
+        height: 40rem;
+        overflow-y: auto;
+    }
+}
+
+@include variable.Small {
+}
+@include variable.Medium {
+    .mainContainer {
+        padding: 2rem 4rem;
+    }
+}
+@include variable.Large {
+    .mainContainer {
+        padding: 4rem 8rem;
+    }
+
+    .container {
+        @include variable.flexBox(row, nowrap, center, center, center);
+
+        div {
+            width: 50%;
+        }
+    }
+}
+@include variable.Extra-large {
+}
+@include variable.XXL-large {
+}
+@include variable.XXXL-large {
+}

@@ -1,0 +1,17 @@
+@use "./variable.scss";
+
+@mixin slideScroll() {
+    animation: slideScroll variable.$product-carousel-scrool linear infinite;
+
+    @keyframes slideScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-340px * 10));
+        }
+    }
+}
+
+@mixin bounce {
+}

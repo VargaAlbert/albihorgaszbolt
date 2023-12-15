@@ -1,0 +1,105 @@
+@use "./variable.scss";
+
+//@extend %nav-icon;
+%nav-icon {
+    border: none;
+    color: variable.$color-basic-white;
+    font-size: variable.$size-r15;
+}
+
+@mixin main-button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    @include variable.flexBox(row, nowrap, center, space-around, center);
+    border-radius: 0.5rem;
+    font-size: variable.$size-r10 + 0.3rem;
+    font-weight: variable.$weights-6;
+    border: none;
+    cursor: pointer;
+    outline-offset: 4px;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    background: variable.$color-main-button;
+    color: variable.$color-basic-white;
+    will-change: transform;
+    transition: transform 0.2s;
+
+    &:hover {
+        filter: brightness(110%);
+        -webkit-filter: brightness(110%);
+        transform: translateY(-5px);
+        transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+    }
+
+    &:active {
+        transform: scale(0.9);
+        transition: transform 34ms;
+    }
+
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
+@mixin INC-DEC-btn-container {
+    height: 100%;
+    width: 100px;
+    white-space: nowrap;
+    padding: 0.4rem;
+    font-size: variable.$size-r10 + 0.2rem;
+    font-weight: variable.$weights-6;
+    border: 2px solid variable.$color-font-secondary;
+    border-radius: 0.5rem;
+    @include variable.flexBox(row, nowrap, center, space-between, center);
+
+    button {
+        height: 100%;
+        width: 20%;
+        background: none;
+        border: none;
+        outline: none;
+        margin: 0;
+        padding: auto;
+        font-size: inherit;
+        font-family: inherit;
+        color: inherit;
+        cursor: pointer;
+        @include variable.flexBox(row, nowrap, center, center, center);
+    }
+
+    [type="number"] {
+        height: 100%;
+        background: none;
+        border: none;
+        outline: none;
+        width: 60%;
+        text-align: center;
+        color: variable.$color-basic-white;
+        line-height: 0.5rem;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+    }
+}
+
+.backgroundModal {
+    background-color: variable.$color-main-background-nav;
+    color: variable.$color-font-primary;
+}
+
+/* -----bootstrap class------ */
+.btn-close {
+    font-size: variable.$size-r10 + 0.3;
+    background-color: variable.$color-basic-white;
+    &:hover {
+        background-color: variable.$color-main-button-hover;
+    }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    height: 80%;
+}

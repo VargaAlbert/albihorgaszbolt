@@ -1,0 +1,49 @@
+@use "../../scss/variable.scss";
+
+.link {
+    @include variable.flexBox(row, nowrap, center, flex-start, center);
+    width: 100%;
+    height: 50px;
+    padding-left: 0.5rem;
+    border-bottom: 2px solid variable.$color-font-secondary;
+
+    &:hover {
+        cursor: pointer;
+        background-color: variable.$color-main-button-hover;
+        transition: color 0.3s ease-in-out;
+    }
+
+    span {
+        color: variable.$color-font-primary;
+        font-size: variable.$size-r10 + 0.3rem;
+        font-weight: variable.$weights-6;
+    }
+}
+
+@include variable.Small {
+}
+@include variable.Medium {
+}
+@include variable.Large {
+}
+@include variable.Extra-large {
+    .link {
+        padding-left: 0rem;
+        height: auto;
+        width: auto;
+        display: block;
+        border-bottom: none;
+
+        &:hover {
+            background-color: initial;
+        }
+
+        span:hover {
+            color: variable.$color-font-secondary;
+        }
+    }
+}
+@include variable.XXL-large {
+}
+@include variable.XXXL-large {
+}

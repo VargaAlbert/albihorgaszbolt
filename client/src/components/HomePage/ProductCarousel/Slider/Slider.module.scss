@@ -1,0 +1,93 @@
+@use "../.././../../scss/variable.scss";
+@use "../../../../scss/ancestor-class.scss";
+
+.mainContainer {
+    width: 300px;
+    margin: 0 20px;
+    height: 500px;
+    @include variable.flexBox(row, nowrap, normal, normal, center);
+
+    .sliderProductContainer {
+        width: 300px;
+        height: 480px;
+        @include variable.flexBox(column, nowrap, center, space-around, center);
+        background-color: variable.$color-main-background-product;
+        color: variable.$color-font-primary;
+        border-radius: 1rem;
+        text-align: center;
+        padding: 0.5rem 0.3rem;
+        transition: 0.2s;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: 0.2s;
+        }
+
+        .sliderIink {
+            @include variable.flexBox(column, nowrap, center, space-around, center);
+        }
+
+        img {
+            display: block;
+            width: 90%;
+            max-height: 300px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 1rem;
+        }
+
+        h3 {
+            margin: 1rem 0.5rem 0.5rem;
+            font-size: variable.$size-r10;
+            font-weight: variable.$weights-9;
+            color: variable.$color-font-primary;
+        }
+
+        h4 {
+            font-weight: variable.$weights-6;
+            font-size: variable.$size-r10 + 0.2rem;
+            color: variable.$color-font-primary;
+            margin: 0rem 0.5rem 0.5rem;
+        }
+
+        .sliderProductId {
+            color: variable.$color-font-secondary;
+            border-top: 1px solid variable.$color-font-secondary;
+        }
+
+        .sliderPrice {
+            font-size: variable.$size-r15;
+            font-weight: variable.$weights-9;
+        }
+
+        .sliderProductItemByContainer {
+            height: 60px;
+            width: 90%;
+            @include variable.flexBox(row, nowrap, center, space-between, center);
+        }
+
+        .sliderBtnByIcon {
+            font-size: variable.$size-r20;
+            color: variable.$color-font-primary;
+        }
+
+        .sliderBtnHeartIicon {
+            font-size: variable.$size-r20;
+            color: variable.$color-font-primary;
+            cursor: pointer;
+
+            &:hover {
+                color: variable.$color-main-button-hover;
+                font-size: variable.$size-r20 + 0.2rem;
+                transition: 0.2s;
+            }
+        }
+
+        .sliderByBtn {
+            @include ancestor-class.main-button;
+            font-size: variable.$size-r10;
+            width: 65%;
+            padding: 0.8rem;
+        }
+    }
+}

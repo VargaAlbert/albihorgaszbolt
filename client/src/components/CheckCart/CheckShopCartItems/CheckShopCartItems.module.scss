@@ -1,0 +1,165 @@
+@use "../../../scss/variable.scss";
+@use "../../../scss/ancestor-class.scss";
+
+.mainContainer {
+    width: 95%;
+    min-width: 300px;
+    height: 200px;
+    border: 2px solid variable.$color-font-secondary;
+    color: variable.$color-font-primary;
+    background-color: variable.$color-main-background-product;
+    border-radius: 1rem;
+    margin: auto;
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+
+    display: grid;
+    grid-template-columns: auto 2fr;
+    grid-template-rows: auto 75%;
+    grid-template-areas:
+        "a a"
+        "b c";
+    gap: 0.4rem;
+}
+
+.descriptionContainer {
+    grid-area: a;
+    width: 100%;
+    @include variable.flexBox(row, nowrap, normal, space-between, normal);
+    gap: 1rem;
+    border-bottom: 1px solid variable.$color-font-secondary;
+
+    h3 {
+        margin: 0 0 0.2rem;
+        font-size: variable.$size-r10;
+        width: 100%;
+    }
+
+    .deleteIconCont {
+        @include variable.flexBox(row, nowrap, normal, space-between, normal);
+
+        .icon {
+            font-size: variable.$size-r10 + 0.3rem;
+
+            &:hover {
+                color: variable.$color-main-button;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.imgContainer {
+    grid-area: b;
+    width: auto;
+    img {
+        display: block;
+        width: 100%;
+        max-width: 170px;
+        border-radius: 0.5rem;
+    }
+}
+
+.priceContainer {
+    grid-area: c;
+    height: 100%;
+    @include variable.flexBox(row, nowrap, normal, space-between, center);
+
+    .btnCont {
+        height: 100%;
+        @include variable.flexBox(column, nowrap, normal, space-around, center);
+
+        .price {
+            text-align: end;
+        }
+
+        .IncDecBtnContainer {
+            @include ancestor-class.INC-DEC-btn-container;
+            height: 50px;
+        }
+    }
+
+    .checkPrice {
+        padding: 0.5rem 0 0.5rem 0.5rem;
+        font-size: variable.$size-r10 + 0.3rem;
+        font-weight: variable.$weights-5;
+        text-align: end;
+    }
+}
+
+@include variable.Small {
+    .priceContainer {
+        .btnCont {
+            width: 100%;
+            gap: 0.5rem;
+
+            .price {
+                order: 1;
+                white-space: nowrap;
+            }
+
+            .IncDecBtnContainer {
+                order: 2;
+            }
+        }
+
+        .checkPrice {
+            width: 180px;
+            padding: 0.5rem 0 0.5rem 0.5rem;
+            font-size: variable.$size-r10 + 0.3rem;
+            font-weight: variable.$weights-5;
+            text-align: end;
+        }
+    }
+}
+@include variable.Medium {
+    .priceContainer {
+        .btnCont {
+            @include variable.flexBox(row, nowrap, normal, space-around, center);
+            .price {
+                width: 120px;
+                order: 2;
+                white-space: nowrap;
+            }
+
+            .IncDecBtnContainer {
+                order: 1;
+            }
+        }
+        .checkPrice {
+            padding: 0.5rem;
+            white-space: nowrap;
+        }
+    }
+}
+@include variable.Large {
+    .mainContainer {
+        grid-template-columns: auto 2fr;
+        grid-template-rows: 25% 75%;
+        grid-template-areas:
+            "b a"
+            "b c";
+        gap: 5px;
+        gap: 0.8rem;
+    }
+
+    .imgContainer {
+        grid-area: b;
+        width: auto;
+        img {
+            max-width: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    }
+}
+@include variable.Extra-large {
+}
+@include variable.XXL-large {
+}
+@include variable.XXXL-large {
+}

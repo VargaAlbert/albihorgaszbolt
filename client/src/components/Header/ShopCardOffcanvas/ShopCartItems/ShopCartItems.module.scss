@@ -1,0 +1,67 @@
+@use "../../../../scss/variable.scss";
+@use "../../../../scss/ancestor-class.scss";
+
+.mainContainer {
+    width: 90%;
+    height: 200px;
+    min-width: 300px;
+    border: 2px solid variable.$color-font-secondary;
+    background-color: variable.$color-main-background-product;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    @include variable.flexBox(column, nowrap, normal, space-between, normal);
+    gap: 0.8rem;
+
+    .imgContainer {
+        width: auto;
+        img {
+            width: 100px;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+    }
+
+    .contentContainer {
+        width: 100%;
+        @include variable.flexBox(row, nowrap, normal, space-between, normal);
+        gap: 1rem;
+
+        h3 {
+            margin: 0 0 0.5rem;
+            font-size: variable.$size-r10;
+            border-bottom: 1px solid variable.$color-font-secondary;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        .deleteIconCon {
+            @include variable.flexBox(row, nowrap, normal, space-between, normal);
+
+            .icon {
+                font-size: variable.$size-r10 + 0.3rem;
+
+                &:hover {
+                    color: variable.$color-main-button;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .priceContainer {
+        height: 40px;
+        @include variable.flexBox(row, nowrap, normal, space-between, center);
+
+        .IncDecBtnContainer {
+            @include ancestor-class.INC-DEC-btn-container;
+        }
+
+        .price {
+            font-size: variable.$size-r10 + 0.3rem;
+            font-weight: variable.$weights-5;
+        }
+    }
+}

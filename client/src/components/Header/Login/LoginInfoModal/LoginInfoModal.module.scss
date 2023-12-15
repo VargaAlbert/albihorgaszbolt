@@ -1,0 +1,11 @@
+@use "../../../../scss/variable.scss";
+@use "../../../../scss/ancestor-class.scss";
+
+.btn {
+    @include ancestor-class.main-button;
+    margin: 1.5rem 0;
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    letter-spacing: 0.1rem;
+}

@@ -1,0 +1,60 @@
+@use "../../../scss/variable.scss";
+@use "../../../scss/animations.scss";
+
+.sliderProductLabel {
+    margin: 8rem 0 4rem;
+    h3 {
+        font-size: variable.$size-r35;
+        color: variable.$color-font-primary;
+        text-align: center;
+        letter-spacing: 0.125rem;
+    }
+
+    h4 {
+        font-size: variable.$size-r20;
+        color: variable.$color-font-secondary;
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+}
+
+.slider {
+    background: variable.$color-main-background;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 500px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &::before,
+    &::after {
+        content: "";
+        height: 500px;
+        position: absolute;
+        width: 10px;
+        z-index: 2;
+    }
+
+    &::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+    }
+
+    &::before {
+        left: 0;
+        top: 0;
+    }
+}
+
+.slideTrack {
+    height: 500px;
+    @include animations.slideScroll;
+    @include variable.flexBox(row, nowrap, normal, normal, center);
+    width: calc(340px * 20);
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}

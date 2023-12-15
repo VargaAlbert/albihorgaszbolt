@@ -1,0 +1,140 @@
+@use "../../../scss/variable.scss";
+@use "../../../scss/ancestor-class.scss";
+
+.mainContainer {
+    margin: 4rem auto 0.5rem;
+    padding: 1rem 2rem;
+    height: auto;
+    width: calc(100% - 4rem);
+    border-radius: 1rem;
+    background-color: variable.$color-main-background-product;
+
+    @include variable.flexBox(row, wrap, center, space-between, center);
+    gap: 0.5rem;
+
+    .dbCont {
+        width: calc(50% - 0.5rem);
+        @include variable.flexBox(column, nowrap, center, center, flex-start);
+        color: variable.$color-font-secondary;
+
+        .db {
+            color: variable.$color-font-primary;
+        }
+    }
+
+    .filtIconCont {
+        width: calc(50% - 0.5rem);
+        @include variable.flexBox(column, nowrap, center, center, center);
+        color: variable.$color-font-primary;
+
+        .icon {
+            @extend %nav-icon;
+            margin: 0.3rem;
+
+            &:hover {
+                cursor: pointer;
+                color: variable.$color-main-button-hover;
+            }
+        }
+
+        span {
+            font-size: variable.$size-r10;
+            font-weight: variable.$weights-9;
+        }
+    }
+
+    .pageSelectCont {
+        width: 100%;
+        .label {
+            color: variable.$color-font-primary;
+            font-size: variable.$size-r10 - 0.2rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .filterCont {
+        width: 100%;
+        .select {
+            background-color: variable.$color-main-button-hover;
+        }
+
+        .label {
+            color: variable.$color-font-primary;
+            font-size: variable.$size-r10 - 0.2rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+@include variable.Small {
+    .mainContainer {
+        margin: 4rem auto 0.5rem;
+        padding: 1rem 2rem;
+        height: auto;
+        width: calc(100% - 4rem);
+        @include variable.flexBox(row, wrap, center, space-between, center);
+        gap: 1rem;
+        .dbCont {
+            width: calc(50% - 2rem);
+        }
+        .filtIconCont {
+            width: calc(50% - 2rem);
+        }
+        .pageSelectCont {
+            width: calc(50% - 2rem);
+        }
+        .filterCont {
+            width: calc(50% - 2rem);
+        }
+    }
+}
+@include variable.Medium {
+}
+@include variable.Large {
+    .mainContainer {
+        margin: 4rem auto 0.5rem;
+        padding: 1rem 2rem;
+        height: auto;
+        width: calc(100% - 4rem);
+        @include variable.flexBox(row, wrap, center, space-between, center);
+        gap: 0.5rem;
+        .dbCont {
+            width: calc(25% - 0.5rem);
+        }
+        .filtIconCont {
+            width: calc(10% - 0.5rem);
+        }
+        .pageSelectCont {
+            width: calc(25% - 0.5rem);
+        }
+        .filterCont {
+            width: calc(25% - 0.5rem);
+        }
+    }
+}
+@include variable.Extra-large {
+    .mainContainer {
+        margin: 4rem auto 0.5rem;
+        padding: 1rem 2rem;
+        height: auto;
+        width: calc(100% - 4rem);
+        @include variable.flexBox(row, wrap, center, space-between, center);
+        gap: 1rem;
+        .dbCont {
+            width: calc(20% - 2rem);
+        }
+        .filtIconCont {
+            display: none;
+        }
+        .pageSelectCont {
+            width: calc(20% - 2rem);
+        }
+        .filterCont {
+            width: calc(25% - 2rem);
+        }
+    }
+}
+@include variable.XXL-large {
+}
+@include variable.XXXL-large {
+}

@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* ---FONT-SETTING--- */
+$font-main-size: 16px;
+$font-stack: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+
+$size-r05: 0.5rem;
+$size-r10: 1rem;
+$size-r15: 1.5rem;
+$size-r20: 2rem;
+$size-r25: 2.5rem;
+$size-r30: 3rem;
+$size-r35: 3.5rem;
+$size-r40: 4rem;
+$size-r45: 4.5rem;
+$size-r50: 5rem;
+$size-r100: 10rem;
+
+$weights-1: 100;
+$weights-2: 200;
+$weights-3: 300;
+$weights-4: 400;
+$weights-5: 500;
+$weights-6: 600;
+$weights-7: 700;
+$weights-8: 800;
+$weights-9: 900;
+
+/* ---COLOR-SETTING--- */
+
+$color-basic-white: white;
+$color-basic-black: black;
+$color-basic-gray: gray;
+
+$color-main-background: #0c0c0c;
+$color-main-background-nav: #29303f;
+$color-main-background-footer: #1f1f1f;
+$color-main-background-product: #454b57;
+
+$color-main-button: #f0003c;
+$color-main-button-hover: #c71d3c;
+
+$color-secondary-new: #099e09;
+$color-secondary-sale: #d30a2b;
+
+$color-font-primary: #fcfcfc;
+$color-font-secondary: #8f9ab3;
+//$color-font-erorr: #faebd7;
+
+//------------------
+$product-carousel-scrool: 38s;
+
+//--------------------
+
+// base:  @include variable.flexBox(row, nowrap, normal, normal, normal);
+@mixin flexBox($direction, $wrap, $align, $justify, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    align-content: $align;
+    justify-content: $justify;
+    align-items: $align-items;
+}
+
+/* ---MEDIA-SETTING--- */
+$Small: 540px;
+@mixin Small {
+    @media (min-width: $Small) {
+        @content;
+    }
+}
+$Medium: 768px;
+@mixin Medium {
+    @media (min-width: $Medium) {
+        @content;
+    }
+}
+$Large: 992px;
+@mixin Large {
+    @media (min-width: $Large) {
+        @content;
+    }
+}
+$Extra-large: 1200px;
+@mixin Extra-large {
+    @media (min-width: $Extra-large) {
+        @content;
+    }
+}
+$XXL-large: 1440px;
+@mixin XXL-large {
+    @media (min-width: $XXL-large) {
+        @content;
+    }
+}
+$XXXL-large: 1650px;
+@mixin XXXL-large {
+    @media (min-width: $XXXL-large) {
+        @content;
+    }
+}
+
+//@include variable.container-my
+@mixin container-my {
+    max-width: $XXXL-large;
+    width: 98%;
+    margin: auto;
+}
