@@ -60,7 +60,6 @@ router.post('/login', async (req, res) => {
         //megkeresés a felhasználóhoz tartozó kosár
         const shopCard = await ShopCard.findOne({ userId: user._id }, { items: 1, _id: 0 });
 
-
         res.status(200).json({
             token,
             user: userWithName,
