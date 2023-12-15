@@ -27,6 +27,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
 
             {menuList.length > 0 &&
+
               menuList.map((category) => {
                 return (
                   <Route
