@@ -35,24 +35,10 @@ mongoose.connect(dbConfig.mongoURIsharpSystem).then(() => {
     console.error('Hiba történt az adatbázishoz való csatlakozás közben:', err);
 });
 
-// Példa a szöveges adat lekérésére a MongoDB-ből
-app.get('/get-text', async (req, res) => {
-    try {
-        // MongoDB-ből történő lekérés példakódja
-        const textData = await Text.findOne({}); // TextModel a MongoDB modellje
-
-        // A kliensnek visszaküldjük az adatokat JSON formátumban
-        res.json({ textData }); // Feltételezzük, hogy a szöveges adat "text" mezőben van
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
-
-/* const user = await User.findOne({ email: "albi@gmail.com" });
+const user = await User.findOne({ email: "albi@gmail.com" });
 app.get('/db', (req, res) => {
     res.send(user);
-}); */
-
+});
 
 app.use('/auth', authRoutes);
 app.use('/products', productsRoutes);
