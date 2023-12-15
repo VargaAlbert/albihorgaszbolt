@@ -48,10 +48,10 @@ app.get('/get-text', async (req, res) => {
     }
 });
 
-const user = await User.findOne({ email: "albi@gmail.com" });
+/* const user = await User.findOne({ email: "albi@gmail.com" });
 app.get('/db', (req, res) => {
     res.send(user);
-});
+}); */
 
 
 app.use('/auth', authRoutes);
