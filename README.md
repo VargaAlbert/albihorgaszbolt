@@ -2,6 +2,7 @@
 
 **Albi horgászbolt webshop. Full MERN app, React Front end Express Back end részel, AZURE App Services hosting MongoDB connect. Több oldalas alkalmazás, több funkcióval, kategóriákkal szűrési feltételekkel funkcionális programozással reszponzíve dizájnnal.**
 
+![Logo](./client/src/img/logo.png)
 **https://albihorgaszbolt.azurewebsites.net/**
 
 ## Tech Stack
@@ -86,8 +87,6 @@ A projektben használt mongoose Bootstrap 5 technologiák:
 
 **MongoDB shopcards COLLECTIONS**
 ![shopcards-COLLECTIONS](./doc/doc-mongo-01.png)
-
-![Logo](./client/src/img/logo.png)
 
 #### Felhasznált kód, elemek:
 
