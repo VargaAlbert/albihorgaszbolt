@@ -3,6 +3,7 @@
 **Albi horgászbolt webshop. Full MERN app, React Front end Express Back end részel, AZURE App Services hosting MongoDB connect. Több oldalas alkalmazás, több funkcióval, kategóriákkal szűrési feltételekkel funkcionális programozással reszponzíve dizájnnal.**
 
 ![Logo](./client/src/img/logo.png)
+
 **https://albihorgaszbolt.azurewebsites.net/**
 
 ## Tech Stack
