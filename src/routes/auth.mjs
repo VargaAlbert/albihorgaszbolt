@@ -1,14 +1,14 @@
-import express from 'express';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import User from '../models/User.mjs';
-import ShopCard from '../models/ShopCard.mjs';
-import tokenKey from '../serverConfig/tokenKey.mjs';
+import express from "express";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import User from "../models/User.mjs";
+import ShopCard from "../models/ShopCard.mjs";
+import tokenKey from "../serverConfig/tokenKey.mjs";
 
 const router = express.Router();
 
 // Regisztráció
-router.post('/register', async (req, res) => {
+router.post("/register", async (req, res) => {
     try {
         const { firstName, lastName, password, email, phone } = req.body;
 
@@ -27,26 +27,26 @@ router.post('/register', async (req, res) => {
         });
         await shopCard.save();
 
-        res.status(201).send('Regisztráció sikeres!');
+        res.status(201).send("Regisztráció sikeres!");
     } catch (error) {
         console.error(error);
-        res.status(500).send('Hiba történt a regisztráció közben.');
+        res.status(500).send("Hiba történt a regisztráció közben.");
     }
 });
 
 // Bejelentkezés
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await User.findOne({ email });
 
         if (!user) {
-            return res.status(404).send('Felhasználó nem található!');
+            return res.status(404).send("Felhasználó nem található!");
         }
 
         const passwordMatch = await bcrypt.compare(password, user.password);
         if (!passwordMatch) {
-            return res.status(401).send('Hibás jelszó!');
+            return res.status(401).send("Hibás jelszó!");
         }
 
         const userWithName = {
@@ -68,7 +68,7 @@ router.post('/login', async (req, res) => {
 
     } catch (error) {
         console.error(error);
-        res.status(500).send('Hiba történt a bejelentkezés közben.');
+        res.status(500).send("Hiba történt a bejelentkezés közben.");
     }
 });
 

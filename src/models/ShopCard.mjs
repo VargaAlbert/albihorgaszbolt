@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const shopCardSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        ref: "User",
         required: true
     },
     items: {
@@ -12,7 +12,7 @@ const shopCardSchema = new mongoose.Schema({
     }
 });
 
-const ShopCard = mongoose.model('ShopCard', shopCardSchema);
+const ShopCard = mongoose.model("ShopCard", shopCardSchema);
 
 export default ShopCard;
 

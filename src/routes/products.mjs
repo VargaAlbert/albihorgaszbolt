@@ -1,9 +1,9 @@
-import express from 'express';
-import data from '../data/data.json' assert { type: 'json' };
+import express from "express";
+import data from "../data/data.json" assert { type: "json" };
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
     res.json(data);
 });
 
