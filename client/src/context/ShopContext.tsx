@@ -9,7 +9,7 @@ import React, {
 
 import axios from 'axios';
 
-import { ProductDataType, fetchData } from "../data/dataType";
+import { ProductDataType } from "../data/dataType";
 import URL from "../data/Url";
 import { useLocalStorage } from "../hooks/useLocalStorage"
 

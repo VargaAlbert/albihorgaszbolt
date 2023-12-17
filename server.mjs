@@ -10,8 +10,6 @@ import dbConfig from './src/serverConfig/dbConfig.mjs';
 import productsRoutes from './src/routes/products.mjs';
 import updateCartRouter from './src/routes/updateCart.mjs';
 
-import User from './src/models/User.mjs';
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
