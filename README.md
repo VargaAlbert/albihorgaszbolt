@@ -6,11 +6,11 @@
 
 ## Tech Stack
 
-**Client** Typescript, React
-**Client-Style** SASS SCSS, Reactstrap, Bootstrap 5
-**Server** JavaScript, Node, Express
-**Database** MongoDB
-**Host** Azure App Services
+- **Client** Typescript, React
+- **Client-Style** SASS SCSS, Reactstrap, Bootstrap 5
+- **Server** JavaScript, Node, Express
+- **Database** MongoDB
+- **Host** Azure App Services
 
 ## Irányelvek
 
