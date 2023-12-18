@@ -54,7 +54,7 @@ const Registration: React.FC = () => {
         <section className={Style.mainContainer}>
             <div className={Style.container}>
                 <h2>Regisztráció</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quia ipsam officiis quaerat sit animi nihil dolorem optio, repellat iure, excepturi a odit obcaecati asperiores laborum nulla repudiandae fugiat ipsum.</p>
+                <p>Regisztrálj az AlbiHorgászbolt Webáruházba, és légy a törzsvásárlónk ahol egyedi kedvezményeket érhetsz el, és mindig friss akciók várnak rád.</p>
                 <form className={Style.registration} onSubmit={handleSubmit}>
                     <div>
                         <input
