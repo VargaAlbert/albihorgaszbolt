@@ -15,7 +15,6 @@ const Registration: React.FC = () => {
 
     const {
         setLoginRegModalInfo,
-        toggleDropdownLogin,
     } = useShopContext();
 
     const handlePasswordChange = (index: number, value: string) => {
