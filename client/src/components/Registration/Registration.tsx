@@ -5,33 +5,54 @@ import axios from 'axios';
 
 import Style from "./Registration.module.scss"
 
+type regType = {
+    firstName: string,
+    lastName: string,
+    password: string,
+    passwordTwo: string,
+    email: string,
+    phone: string
+}
+
 const Registration: React.FC = () => {
 
-    const [firstName, setFirstName] = useState<string>('');
-    const [lastName, setlastName] = useState<string>('');
-    const [passwords, setPasswords] = useState<string[]>(['', '']);
-    const [email, setEmail] = useState<string>('');
-    const [phone, setPhone] = useState<string>('');
+    const [form, setForm] = useState<regType>({
+        firstName: "",
+        lastName: "",
+        password: "",
+        passwordTwo: "",
+        email: "",
+        phone: ""
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value,
+        });
+    };
 
     const {
         setLoginRegModalInfo,
     } = useShopContext();
 
-    const handlePasswordChange = (index: number, value: string) => {
-        const updatedPasswords = [...passwords];
-        updatedPasswords[index] = value;
-        setPasswords(updatedPasswords);
-    };
-
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (firstName === "" || lastName === "" || email === "" || passwords[0] === "" || passwords[1] === "") {
+        const {
+            firstName,
+            lastName,
+            email,
+            password,
+            passwordTwo,
+            phone
+        } = form;
+
+        if (firstName === "" || lastName === "" || email === "" || password === "" || passwordTwo === "") {
             setLoginRegModalInfo("reg-incomplete")
-        } else if (passwords[0] !== passwords[1]) {
+        } else if (password !== passwordTwo) {
             setLoginRegModalInfo("reg-error-password");
         } else {
-            const password = passwords[0];
             try {
                 const response = await axios.post(`${URL}/auth/register`, { firstName, lastName, password, email, phone });
                 //console.log('Sikeres regisztráció:', response.data);
@@ -58,43 +79,43 @@ const Registration: React.FC = () => {
                     <div>
                         <input
                             type="text"
+                            name="firstName"
                             placeholder="Vezetékneved*"
-                            value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}
+                            onChange={handleChange}
                         />
                         <input
                             type="text"
+                            name="lastName"
                             placeholder="Keresztneved*"
-                            value={lastName}
-                            onChange={(e) => setlastName(e.target.value)}
+                            onChange={handleChange}
                         />
                     </div>
                     <div>
                         <input
                             type="password"
+                            name="password"
                             placeholder="Jelszó*"
-                            value={passwords[0]}
-                            onChange={(e) => handlePasswordChange(0, e.target.value)}
+                            onChange={handleChange}
                         />
                         <input
                             type="password"
+                            name="password"
                             placeholder="Jelszó újra*"
-                            value={passwords[1]}
-                            onChange={(e) => handlePasswordChange(1, e.target.value)}
+                            onChange={handleChange}
                         />
                     </div>
                     <div>
                         <input
                             type="email"
+                            name="email"
                             placeholder="E-mail címed*"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={handleChange}
                         />
                         <input
                             type="tel"
+                            name="phone"
                             placeholder="Telefonszámod"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
+                            onChange={handleChange}
                         />
                     </div>
                     <button type="submit">REGISZTRÁCIÓ</button>

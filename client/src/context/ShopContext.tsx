@@ -162,8 +162,10 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({
     //bejelentkezés
     const [email, setEmail] = useLocalStorage<string>("email", "");
     const [password, setPassword] = useState<string>("");
+
     const [isChecked, setIsChecked] = useLocalStorage<boolean>("isChecked", false);
     const [token, setToken] = useLocalStorage<string>("token", "")
+
     const [loginMessage, setLoginMessage] = useState<string[]>(["", ""]);
     const [userName, setUserName] = useLocalStorage<string>("userName", "");
 
