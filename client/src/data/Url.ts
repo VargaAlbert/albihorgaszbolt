@@ -3,4 +3,4 @@ const URL = {
    sharp: "https://albihorgaszbolt.azurewebsites.net"
 }
 
-export default URL.test;
+export default URL.sharp;

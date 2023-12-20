@@ -18,6 +18,8 @@ const App = () => {
     productsNoFilter
   } = useShopContext();
 
+  //console.log(productsNoFilter.length)
+
   return (
     <Router>
       <div className={Style.mainBackground}>
@@ -38,7 +40,7 @@ const App = () => {
                 );
               })}
 
-            {productsNoFilter.length > 0 &&
+            {productsNoFilter.length === 0 ? "Loanding..." :
               productsNoFilter.map((product) => {
                 return (
                   <Route
@@ -51,6 +53,9 @@ const App = () => {
 
             <Route path="/check-cart" element={<CheckCart />} />
             <Route path="/registration" element={<Registration />} />
+
+
+
           </Routes>
         </div>
         <Footer />
