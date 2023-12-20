@@ -10,6 +10,7 @@ import CheckCart from "./components/CheckCart/CheckCart";
 import Registration from "./components/Registration/Registration";
 
 import Style from "./scss/App.module.scss";
+import LoandingPage from "./components/LoandingPage/LoandingPage";
 
 const App = () => {
 
@@ -28,33 +29,30 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
 
-            {menuList.length > 0 &&
+            {menuList.map((category) => {
+              return (
+                <Route
+                  path={`/${category}`}
+                  key={category}
+                  element={<ProductsPage />}
+                />
+              );
+            })}
 
-              menuList.map((category) => {
-                return (
-                  <Route
-                    path={`/${category}`}
-                    key={category}
-                    element={<ProductsPage />}
-                  />
-                );
-              })}
-
-            {productsNoFilter.length === 0 ? "Loanding..." :
-              productsNoFilter.map((product) => {
-                return (
-                  <Route
-                    path={`/${product.SORTIMENT}/${product.ID_PRODUC}`}
-                    key={product.ID_PRODUC}
-                    element={<ProductProfilePage productId={product.ID_PRODUC} />}
-                  />
-                );
-              })}
+            {productsNoFilter.map((product) => {
+              return (
+                <Route
+                  path={`/${product.SORTIMENT}/${product.ID_PRODUC}`}
+                  key={product.ID_PRODUC}
+                  element={<ProductProfilePage productId={product.ID_PRODUC} />}
+                />
+              );
+            })}
 
             <Route path="/check-cart" element={<CheckCart />} />
             <Route path="/registration" element={<Registration />} />
 
-
+            <Route path="*" element={<LoandingPage />} />
 
           </Routes>
         </div>
