@@ -67,6 +67,7 @@ A projektben használt Express Node.JS technologiák:
 
 A projektben használt SCSS, Reactstrap, Bootstrap 5 technologiák:
 
+- css module használata.
 - @use, @mixin, @include, @media, @keyframes
 - Flexbox, Grid, Positioning, Before-After
 - variable: color, font-size, weight, media breakpoints
