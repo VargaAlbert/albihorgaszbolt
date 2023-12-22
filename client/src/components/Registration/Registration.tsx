@@ -48,6 +48,8 @@ const Registration: React.FC = () => {
             phone
         } = form;
 
+        console.log(form)
+
         if (firstName === "" || lastName === "" || email === "" || password === "" || passwordTwo === "") {
             setLoginRegModalInfo("reg-incomplete")
         } else if (password !== passwordTwo) {
@@ -99,7 +101,7 @@ const Registration: React.FC = () => {
                         />
                         <input
                             type="password"
-                            name="password"
+                            name="passwordTwo"
                             placeholder="Jelszó újra*"
                             onChange={handleChange}
                         />
