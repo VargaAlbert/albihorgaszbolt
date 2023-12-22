@@ -48,8 +48,6 @@ const Registration: React.FC = () => {
             phone
         } = form;
 
-        console.log(form)
-
         if (firstName === "" || lastName === "" || email === "" || password === "" || passwordTwo === "") {
             setLoginRegModalInfo("reg-incomplete")
         } else if (password !== passwordTwo) {
