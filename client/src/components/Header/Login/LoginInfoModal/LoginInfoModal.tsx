@@ -1,7 +1,9 @@
 import Modal from 'react-bootstrap/Modal';
 import { useShopContext } from "../../../../context/ShopContext";
+
 import style from "./LoginInfoModal.module.scss";
 import "../../../../scss/ancestor-class.scss"
+
 const LoginInfoModal: React.FC = () => {
 
     const {

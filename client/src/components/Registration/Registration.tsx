@@ -25,16 +25,16 @@ const Registration: React.FC = () => {
         phone: ""
     });
 
+    const {
+        setLoginRegModalInfo,
+    } = useShopContext();
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm({
             ...form,
             [e.target.name]: e.target.value,
         });
     };
-
-    const {
-        setLoginRegModalInfo,
-    } = useShopContext();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -60,7 +60,7 @@ const Registration: React.FC = () => {
             } catch (error: any) {
                 if (error.response && error.response.data && error.response.data.email) {
                     const existingEmail: string = error.response.data.email;
-                    //console.error('Hiba történt a regisztráció közben:', existingEmail, "már foglalt");
+
                     setLoginRegModalInfo("reg-error-existingEmail", existingEmail);
                 } else {
                     //console.error('Hiba történt a regisztráció közben:', error);

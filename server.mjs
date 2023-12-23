@@ -1,12 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
 import { fileURLToPath } from "url";
-import { dirname, join } from "path";
+import path, { dirname, join } from "path";
 
-import path from "path";
-
-import authRoutes from "./src/routes/auth.mjs";
 import dbConfig from "./src/serverConfig/dbConfig.mjs";
+import authRoutes from "./src/routes/auth.mjs";
 import productsRoutes from "./src/routes/products.mjs";
 import updateCartRouter from "./src/routes/updateCart.mjs";
 
@@ -24,10 +22,10 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true }));// Express alkalmazást képes legyen értelmezni az URL-kódolt adatokat a HTTP POST kérésekben.
+app.use(express.json()); //Express alkalmazást képes legyen értelmezni a JSON formátumú adatokat a HTTP POST kérésekben. 
 
-mongoose.connect(dbConfig.mongoURItest).then(() => {
+mongoose.connect(dbConfig.mongoTEST).then(() => {
     console.log("Sikeresen csatlakozva az adatbázishoz.");
 }).catch((err) => {
     console.error("Hiba történt az adatbázishoz való csatlakozás közben:", err);

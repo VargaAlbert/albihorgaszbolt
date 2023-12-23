@@ -8,9 +8,9 @@ import ProductProfilePage from "./components/ProductProfilePage/ProductProfilePa
 import Footer from "./components/Footer/Footer";
 import CheckCart from "./components/CheckCart/CheckCart";
 import Registration from "./components/Registration/Registration";
+import LoandingPage from "./components/LoandingPage/LoandingPage";
 
 import Style from "./scss/App.module.scss";
-import LoandingPage from "./components/LoandingPage/LoandingPage";
 
 const App = () => {
 
@@ -18,8 +18,6 @@ const App = () => {
     menuList,
     productsNoFilter
   } = useShopContext();
-
-  //console.log(productsNoFilter.length)
 
   return (
     <Router>

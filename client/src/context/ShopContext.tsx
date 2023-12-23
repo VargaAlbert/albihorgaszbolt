@@ -190,7 +190,7 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({
     const menuList = Array.from(new Set(productsNoFilter.map((item) => item.SORTIMENT))).sort();
 
     useEffect(() => {
-        async function fetchProducts() {
+        const fetchProducts = async () => {
             try {
                 const response = await axios.get(`${URL}/products`);
                 setProductsNoFilter(response.data);
@@ -411,7 +411,7 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({
                 }
             };
 
-            // A változás kezelése, és a kosár frissítése
+            // A változás kezelése, és a kosár frissítése kijelentkezéskor
             if (token !== null) {
                 updateCart(token, cartItems);
             } else {
