@@ -1,7 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import { fileURLToPath } from "url";
-import path, { dirname, join } from "path";
+import { dirname, join } from "path";
+
+import path from "path";
 
 import dbConfig from "./src/serverConfig/dbConfig.mjs";
 import authRoutes from "./src/routes/auth.mjs";

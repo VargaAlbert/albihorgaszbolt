@@ -157,6 +157,8 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({
     const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
         "shopping-cart",
         [])
+    const [heartItems, setHeartItems] = useLocalStorage<string[]>("heartItems", []);
+
     const [show, setShow] = useState(false);
 
     //bejelentkezés

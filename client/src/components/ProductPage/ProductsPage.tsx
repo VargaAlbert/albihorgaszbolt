@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaCartShopping, FaHeart } from "react-icons/fa6";
 import { useShopContext } from "../../context/ShopContext";
@@ -6,6 +7,8 @@ import Pagination from './Pagination/Pagination';
 import ProductsHead from "./ProductsHead/ProductsHead";
 
 import Style from "./ProductsPage.module.scss"
+
+//type heart = "onColor" | "offColor";
 
 const ProductsPage: React.FC = () => {
 
@@ -16,6 +19,11 @@ const ProductsPage: React.FC = () => {
         products,
         category
     } = useShopContext();
+
+    // const [heartStyle, setHeartStyle] = useState<heart>("offColor")
+    // const handleHeart = () => {
+    //     setHeartStyle((prev) => prev === "onColor" ? "offColor" : "onColor")
+    // }
 
     return (
         <>
@@ -48,7 +56,13 @@ const ProductsPage: React.FC = () => {
                                     </p>
                                 </div>
                                 <div className={Style.itemByContainer}>
-                                    <FaHeart className={Style.btnHeartIcon} />
+
+                                    <FaHeart
+                                        //className={`${Style.btnHeartIcon} ${Style[`${heartStyle}`]}`}
+                                        className={Style.btnHeartIcon}
+                                    //onClick={handleHeart}
+                                    />
+
                                     <button
                                         className={Style.byBtn}
                                         onClick={() => { searchValue("1", product.ID_PRODUC, true) }}

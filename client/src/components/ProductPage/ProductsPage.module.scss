@@ -82,6 +82,10 @@
         }
     }
 
+    .onColor {
+        color: red;
+    }
+
     .byBtn {
         @include ancestor-class.main-button;
         font-size: variable.$size-r10;
