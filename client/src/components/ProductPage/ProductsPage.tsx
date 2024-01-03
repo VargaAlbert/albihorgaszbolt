@@ -8,7 +8,6 @@ import ProductsHead from "./ProductsHead/ProductsHead";
 
 import Style from "./ProductsPage.module.scss"
 
-//type heart = "onColor" | "offColor";
 
 const ProductsPage: React.FC = () => {
 
@@ -20,10 +19,7 @@ const ProductsPage: React.FC = () => {
         category
     } = useShopContext();
 
-    // const [heartStyle, setHeartStyle] = useState<heart>("offColor")
-    // const handleHeart = () => {
-    //     setHeartStyle((prev) => prev === "onColor" ? "offColor" : "onColor")
-    // }
+
 
     return (
         <>
@@ -58,9 +54,9 @@ const ProductsPage: React.FC = () => {
                                 <div className={Style.itemByContainer}>
 
                                     <FaHeart
-                                        //className={`${Style.btnHeartIcon} ${Style[`${heartStyle}`]}`}
+
                                         className={Style.btnHeartIcon}
-                                    //onClick={handleHeart}
+
                                     />
 
                                     <button
