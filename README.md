@@ -39,7 +39,8 @@ A projektben használt React technologiák:
 - Components (functional)
 - Typescript TSX
 - Axios
-- createContext, useContext, useState, useEffect, ReactNode
+- createContext, ReactNode
+- useContext, useState, useEffect, useRef
 - onClick, onBlur, onKeyDown
 
 ### Typescript, JavaScript
