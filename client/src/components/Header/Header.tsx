@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useShopContext } from "../../context/ShopContext";
 import { FaCartShopping, FaHeart, FaUser, FaList, FaRightToBracket } from "react-icons/fa6";
@@ -14,6 +14,7 @@ import Style from "./Header.module.scss";
 const Header: React.FC = () => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const {
     token,
@@ -48,6 +49,20 @@ const Header: React.FC = () => {
     navigate('/');
   }
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <section className={Style.navBackground}>
       <CategoryOffcanvas />
@@ -78,7 +93,7 @@ const Header: React.FC = () => {
             BEJELENTKEZÉS
           </span>
           {isOpen && (
-            <div className={Style.dropdownContent}>
+            <div className={Style.dropdownContent} ref={dropdownRef}>
               <div>
                 <div>Üdvözöljük:</div>
                 <div>{userName}</div>
